@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liampcurran.github.io/tallyloop/sitemap.xml

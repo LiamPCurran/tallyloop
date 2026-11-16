@@ -1,0 +1,104 @@
+{
+ "tagline": "Time tracking and invoicing for freelancers who'd rather be working",
+ "lede": "Start a timer, turn your hours into a professional invoice in two clicks, and let Tallyloop chase late payments for you.",
+ "features": [
+  [
+   "One-click timer",
+   "Track time from the browser or your phone. Forgot to start it? Add hours later in seconds."
+  ],
+  [
+   "Hours → invoice in two clicks",
+   "Pick a client and a date range. Tallyloop builds the invoice from your tracked time and your rates."
+  ],
+  [
+   "Polite payment reminders",
+   "Overdue invoices get friendly automatic reminders, so you don't have to write awkward emails."
+  ],
+  [
+   "Online card payments",
+   "Clients pay by card straight from the invoice. You see the payment the moment it lands."
+  ],
+  [
+   "Project budgets",
+   "Set hours or dollar budgets per project and get a heads-up at 80%, before you go over."
+  ],
+  [
+   "Tax-time exports",
+   "Export income and invoices by year or quarter as CSV or PDF for your accountant."
+  ]
+ ],
+ "steps": [
+  [
+   "Track",
+   "Hit start when you begin a task. Tag it to a client and project."
+  ],
+  [
+   "Invoice",
+   "At month-end, turn tracked hours into a branded invoice and send it."
+  ],
+  [
+   "Get paid",
+   "Clients pay online. Tallyloop sends reminders if they don't."
+  ]
+ ],
+ "plans": [
+  [
+   "Free",
+   "$0",
+   "forever",
+   [
+    "1 active client",
+    "Unlimited time tracking",
+    "3 invoices per month"
+   ],
+   false
+  ],
+  [
+   "Solo",
+   "$9",
+   "/month",
+   [
+    "Unlimited clients and invoices",
+    "Online card payments",
+    "Automatic reminders",
+    "Project budgets"
+   ],
+   true
+  ],
+  [
+   "Studio",
+   "$19",
+   "/month",
+   [
+    "Everything in Solo",
+    "Up to 5 team members",
+    "Team timesheets and approvals",
+    "Tax-time exports"
+   ],
+   false
+  ]
+ ],
+ "faqs": [
+  [
+   "Is there a free plan?",
+   "Yes. The Free plan covers one active client with unlimited time tracking and three invoices a month. Upgrade only when you need more."
+  ],
+  [
+   "Can my clients pay online?",
+   "Yes. On Solo and Studio, every invoice has a pay-by-card button. Card processing fees are charged by the payment provider."
+  ],
+  [
+   "Can I import my existing time entries?",
+   "You can import time entries from a CSV file, which most time trackers can export."
+  ],
+  [
+   "Can I cancel any time?",
+   "Yes. Plans are month-to-month, and you can export all your data before you leave."
+  ]
+ ],
+ "about": [
+  "Tallyloop started as a spreadsheet. Its founder was freelancing as a designer, tracking hours in one app, building invoices in another and chasing payments by email. Every month-end took an afternoon.",
+  "We built Tallyloop to make that afternoon take five minutes. It does three things well: tracks time, turns that time into invoices and gets those invoices paid. That's it. No project-management suite, no CRM, no fifty-tab settings page.",
+  "We're a small, independent team, and we answer support emails ourselves."
+ ]
+}
