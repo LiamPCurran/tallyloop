@@ -22,6 +22,7 @@ nav.main a[aria-current="page"] { color:var(--violet); }
 .btn:hover { background:#5636d6; }
 .btn.ghost { background:transparent; color:var(--ink) !important; border:2px solid var(--line); }
 @media (max-width:760px){ nav.main .hide-m { display:none; } nav.main { gap:14px; } }
+@media (max-width:520px){ header.site .wrap > a.btn { display:none; } }
 .hero { padding:64px 0 40px; background:radial-gradient(ellipse at top right,#ece7ff,transparent 60%); }
 .hero .wrap { text-align:center; }
 .hero .lede { font-size:1.25rem; color:var(--muted); max-width:34em; margin:0 auto 24px; }
