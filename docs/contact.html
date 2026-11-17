@@ -10,31 +10,44 @@
 <meta property="og:title" content="Contact Tallyloop Support"><meta property="og:description" content="Questions about Tallyloop? Email hello@example.com or send a message. A real person on our small team will reply within one business day.">
 <meta property="og:url" content="https://liampcurran.github.io/tallyloop/contact.html"><meta property="og:image" content="https://liampcurran.github.io/tallyloop/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#6a48f0">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://liampcurran.github.io/tallyloop/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://liampcurran.github.io/tallyloop/contact.html"}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site"><div class="wrap">
-<a class="brand" href="index.html"><i></i>Tallyloop</a>
-<nav class="main" aria-label="Main"><a href="index.html" class="hide-m">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="about.html" class="hide-m">About</a><a href="contact.html" aria-current="page">Contact</a></nav>
-<a class="btn" href="pricing.html">Start free</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b6cff"/><stop offset="1" stop-color="#5b3df0"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M9 16a7 7 0 1 0 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M16 5l3 4-4 2" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></svg><span>Tallyloop</span></a>
+<nav class="nav" aria-label="Main"><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a></nav>
+<div class="h-cta"><a class="login" href="contact.html">Log in</a><a class="btn" href="pricing.html">Start free</a></div>
 </div></header>
 <main id="main">
-<section class="page-hero"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> › Contact</div><h1>Talk to a human</h1><p class="muted" style="font-size:1.15rem">We reply within one business day.</p></div></section><section class="block"><div class="wrap"><form class="contact" id="contact" onsubmit="event.preventDefault();document.getElementById('m').classList.add('show');this.reset();">
+<section class="page-hero"><div class="wrap center"><p class="eyebrow">Contact</p><h1>Talk to a human</h1><p class="lede">We reply within one business day, usually much sooner.</p></div></section><section class="section pt0"><div class="wrap contact-grid">
+<form class="contact-form" id="contact" novalidate>
 <div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
 <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required></div>
+<div><label for="t">Topic</label><select id="t" name="topic"><option>Question before signing up</option><option>Help with my account</option><option>Billing</option><option>Something else</option></select></div>
 <div><label for="q">Message</label><textarea id="q" name="message" rows="5" required></textarea></div>
-<button class="btn" type="submit">Send message</button>
-<p class="form-msg" id="m" role="status">Thanks! This is a concept site, so nothing was sent.</p>
-<p>Or email <a href="mailto:hello@example.com">hello@example.com</a>.</p></form></div></section>
+<button class="btn btn-lg" type="submit">Send message</button>
+<p class="form-msg" role="status">Thanks! This is a concept site, so nothing was sent.</p></form>
+<div class="contact-cards">
+<div class="c-card"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><strong>Email</strong><p><a href="mailto:hello@example.com">hello@example.com</a></p></div></div>
+<div class="c-card"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><div><strong>In-app chat</strong><p>Weekdays, 9am–5pm Eastern.</p></div></div>
+<div class="c-card"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z"/><path d="M4 19.5V22h16"/></svg><div><strong>Help centre</strong><p>Step-by-step guides for every feature.</p></div></div>
+</div></div></section>
 </main>
-<footer class="site"><div class="wrap">
-<div class="cols"><div><strong style="color:#fff">Tallyloop</strong><p>Time tracking and invoicing for freelancers.</p></div>
-<ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li></ul>
-<ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<p class="concept">Concept project by Liam Curran – fictional product. This is the fixed "after" version of an AI-built site rescue demo.</p>
+<footer class="site-footer"><div class="wrap">
+<div class="f-grid">
+<div><a class="brand light" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b6cff"/><stop offset="1" stop-color="#5b3df0"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M9 16a7 7 0 1 0 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M16 5l3 4-4 2" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></svg><span>Tallyloop</span></a><p>Time tracking and invoicing for freelancers and small studios.</p></div>
+<div><p class="f-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="features.html#reminders">Payment reminders</a></li></ul></div>
+<div><p class="f-h">Company</p><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><p class="f-h">Get started</p><p>Free for your first client. No card needed.</p><a class="btn btn-sm" href="pricing.html">Start free</a></div>
+</div>
+<p class="concept">Concept project by Liam Curran: a fictional product. Customer names, quotes and figures are illustrative. <span class="ver">This is the fixed "after" version of a website rescue demo.</span></p>
 </div></footer>
+<script>document.querySelectorAll("form.contact-form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();
+if(!f.reportValidity())return;f.querySelector(".form-msg").classList.add("show");f.reset();});});</script>
 </body>
 </html>

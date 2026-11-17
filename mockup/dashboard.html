@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face { font-family: Inter; src: url(../../_fonts/inter-latin-wght-normal.woff2) format("woff2"); font-weight: 100 900; }
+* { box-sizing: border-box; margin: 0; }
+body { width: 1200px; height: 750px; font-family: Inter, sans-serif; color: #1e1b3a; background: #f7f6fc; display: grid; grid-template-columns: 210px 1fr; font-size: 13px; }
+.side { background: #16132b; color: #b9b4d9; padding: 22px 16px; display: flex; flex-direction: column; gap: 4px; }
+.logo { display: flex; align-items: center; gap: 9px; color: #fff; font-weight: 800; font-size: 17px; margin: 0 6px 22px; }
+.logo i { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg,#8b6cff,#5b3df0); }
+.nav { padding: 9px 10px; border-radius: 8px; display: flex; gap: 10px; align-items: center; font-weight: 500; }
+.nav b { width: 15px; height: 15px; border-radius: 4px; border: 2px solid #6d67a0; }
+.nav.on { background: #2a2550; color: #fff; } .nav.on b { border-color: #9d86ff; background: #9d86ff; }
+.timer { margin-top: auto; background: #2a2550; border-radius: 12px; padding: 14px; color: #fff; }
+.timer small { color: #9d97c9; display: block; margin-bottom: 4px; }
+.timer strong { font-size: 22px; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.timer .row { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.stop { width: 30px; height: 30px; border-radius: 50%; background: #ff5d73; display: grid; place-items: center; } .stop:after { content: ""; width: 10px; height: 10px; background: #fff; border-radius: 2px; }
+main { padding: 24px 28px; display: grid; gap: 18px; grid-template-rows: auto auto 1fr; }
+.top { display: flex; justify-content: space-between; align-items: center; }
+.top h1 { font-size: 22px; letter-spacing: -.02em; } .top p { color: #6b6690; margin-top: 2px; }
+.btn { background: #6a48f0; color: #fff; padding: 9px 14px; border-radius: 9px; font-weight: 600; }
+.kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.k { background: #fff; border: 1px solid #ebe8f6; border-radius: 12px; padding: 14px 16px; }
+.k small { color: #6b6690; font-weight: 500; } .k strong { display: block; font-size: 24px; margin: 4px 0 2px; letter-spacing: -.02em; }
+.up { color: #12a150; font-weight: 600; font-size: 12px; } .warn { color: #d97706; font-weight: 600; font-size: 12px; }
+.grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 14px; }
+.card { background: #fff; border: 1px solid #ebe8f6; border-radius: 12px; padding: 16px 18px; }
+.card h2 { font-size: 14px; display: flex; justify-content: space-between; margin-bottom: 14px; } .card h2 span { color: #6b6690; font-weight: 500; }
+.bars { display: flex; align-items: flex-end; gap: 14px; height: 330px; margin-top: 24px; border-bottom: 1px solid #ebe8f6; padding: 0 6px; }
+.bars div { flex: 1; border-radius: 6px 6px 0 0; background: linear-gradient(#8b6cff,#6a48f0); position: relative; }
+.bars div.today { background: linear-gradient(#ffb36b,#f97316); }
+.bars div span { position: absolute; top: -18px; left: 0; right: 0; text-align: center; font-size: 11px; color: #6b6690; font-weight: 600; }
+.days { display: flex; gap: 14px; padding: 6px 6px 0; } .days span { flex: 1; text-align: center; color: #8b86ad; font-size: 11px; }
+.inv { display: grid; grid-template-columns: 1fr auto auto; gap: 10px 14px; align-items: center; }
+.inv .c { display: flex; gap: 10px; align-items: center; font-weight: 600; } .inv .c small { display: block; color: #8b86ad; font-weight: 500; }
+.av { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 12px; }
+.amt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.st { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+.bud { margin-top: 22px; border-top: 1px solid #ebe8f6; padding-top: 16px; display: grid; gap: 12px; }
+.bud h3 { font-size: 14px; } .bud .r { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 5px; } .bud .r span { color: #6b6690; font-weight: 500; }
+.bar { height: 8px; border-radius: 6px; background: #eeebf8; overflow: hidden; } .bar i { display: block; height: 100%; border-radius: 6px; background: #6a48f0; }
+.paid { background: #e3f7ec; color: #0f8a43; } .sent { background: #ece7ff; color: #5b3df0; } .late { background: #fff1e0; color: #c2610c; }
+</style></head><body>
+<aside class="side">
+<div class="logo"><i></i>Tallyloop</div>
+<div class="nav on"><b></b>Dashboard</div><div class="nav"><b></b>Timer</div><div class="nav"><b></b>Projects</div>
+<div class="nav"><b></b>Invoices</div><div class="nav"><b></b>Clients</div><div class="nav"><b></b>Reports</div>
+<div class="timer"><small>Northfield Studio · Homepage redesign</small><div class="row"><strong>01:24:37</strong><span class="stop"></span></div></div>
+</aside>
+<main>
+<div class="top"><div><h1>Good morning, Sam</h1><p>Here's your week so far</p></div><span class="btn">+ New invoice</span></div>
+<div class="kpis">
+<div class="k"><small>Tracked this week</small><strong>31h 40m</strong><span class="up">▲ 12% vs last week</span></div>
+<div class="k"><small>Unbilled time</small><strong>$2,145</strong><span class="warn">Ready to invoice</span></div>
+<div class="k"><small>Paid this month</small><strong>$6,820</strong><span class="up">▲ 3 invoices paid</span></div>
+<div class="k"><small>Avg. days to paid</small><strong>9 days</strong><span class="up">▼ 6 days faster</span></div>
+</div>
+<div class="grid">
+<div class="card"><h2>Hours by day <span>This week</span></h2>
+<div class="bars"><div style="height:62%"><span>6.2h</span></div><div style="height:78%"><span>7.8h</span></div><div style="height:70%"><span>7.0h</span></div><div class="today" style="height:88%"><span>8.8h</span></div><div style="height:19%"><span>1.9h</span></div><div style="height:0"></div><div style="height:0"></div></div>
+<div class="days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+<div class="card"><h2>Recent invoices <span>View all</span></h2>
+<div class="inv">
+<div class="c"><span class="av" style="background:#6a48f0">NS</span><div>Northfield Studio<small>#1042 · Nov 3</small></div></div><span class="amt">$2,400</span><span class="st paid">Paid</span>
+<div class="c"><span class="av" style="background:#0ea5e9">OL</span><div>Okafor &amp; Lee<small>#1041 · Oct 30</small></div></div><span class="amt">$1,180</span><span class="st sent">Sent</span>
+<div class="c"><span class="av" style="background:#f97316">BC</span><div>Brightside Co.<small>#1040 · Oct 24</small></div></div><span class="amt">$960</span><span class="st late">Reminder sent</span>
+<div class="c"><span class="av" style="background:#12a150">JL</span><div>Juniper Labs<small>#1039 · Oct 18</small></div></div><span class="amt">$2,280</span><span class="st paid">Paid</span>
+<div class="c"><span class="av" style="background:#e11d74">PW</span><div>Pixelwell<small>#1038 · Oct 11</small></div></div><span class="amt">$740</span><span class="st paid">Paid</span>
+</div>
+<div class="bud"><h3>Project budgets</h3>
+<div><div class="r">Homepage redesign <span>34 / 40 h</span></div><div class="bar"><i style="width:85%;background:#f97316"></i></div></div>
+<div><div class="r">Brand guidelines <span>12 / 30 h</span></div><div class="bar"><i style="width:40%"></i></div></div></div>
+</div>
+</div>
+</main>
+</body></html>
