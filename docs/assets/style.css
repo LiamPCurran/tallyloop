@@ -1,6 +1,6 @@
 /* Tallyloop concept site. Shared by before/ and after/ so they look identical.
    Selectors cover both real elements (h2, a) and the "before" stand-ins (.h2, [data-go]). */
-@font-face { font-family: "Inter"; src: url(inter.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url(inter.woff2) format("woff2"); font-weight: 100 900; font-display: optional; }
 :root { --ink:#17142e; --muted:#5b5780; --violet:#5b3df0; --violet-2:#7c5cff; --violet-soft:#f0ecff; --line:#e7e4f3; --tint:#f8f7fd; --orange:#f97316; --green:#12a150; --max:1160px; --r:16px;
   --shadow: 0 30px 60px -24px rgba(35,20,110,.28); }
 *,*::before,*::after { box-sizing:border-box; }
@@ -37,7 +37,7 @@ p { margin:0 0 1em; }
 .link-arrow { display:inline-flex; gap:6px; align-items:center; font-weight:650; text-decoration:none; }
 
 /* Header */
-.site-header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.88); backdrop-filter:saturate(1.6) blur(12px); border-bottom:1px solid var(--line); }
+.site-header { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line); }
 .site-header .wrap { display:flex; align-items:center; gap:28px; min-height:70px; }
 .brand { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.25rem; color:var(--ink); text-decoration:none; letter-spacing:-.03em; }
 .brand .logo { width:32px; height:32px; }
@@ -211,3 +211,6 @@ p { margin:0 0 1em; }
 .site-footer .brand { margin-bottom:14px; }
 .concept { border-top:1px solid #26214a; margin-top:48px; padding-top:22px; font-size:.86rem; color:#8c87b3; }
 @media (max-width:760px){ .f-grid { grid-template-columns:1fr 1fr; } }
+
+/* Below-the-fold sections: let the browser skip layout/paint until they're near the viewport. */
+.section, .stats, .cta, .site-footer { content-visibility:auto; contain-intrinsic-size:auto 900px; }

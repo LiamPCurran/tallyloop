@@ -36,7 +36,7 @@ p { margin:0 0 1em; }
 .link-arrow { display:inline-flex; gap:6px; align-items:center; font-weight:650; text-decoration:none; }
 
 /* Header */
-.site-header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.88); backdrop-filter:saturate(1.6) blur(12px); border-bottom:1px solid var(--line); }
+.site-header { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line); }
 .site-header .wrap { display:flex; align-items:center; gap:28px; min-height:70px; }
 .brand { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.25rem; color:var(--ink); text-decoration:none; letter-spacing:-.03em; }
 .brand .logo { width:32px; height:32px; }
@@ -210,3 +210,6 @@ p { margin:0 0 1em; }
 .site-footer .brand { margin-bottom:14px; }
 .concept { border-top:1px solid #26214a; margin-top:48px; padding-top:22px; font-size:.86rem; color:#8c87b3; }
 @media (max-width:760px){ .f-grid { grid-template-columns:1fr 1fr; } }
+
+/* Below-the-fold sections: let the browser skip layout/paint until they're near the viewport. */
+.section, .stats, .cta, .site-footer { content-visibility:auto; contain-intrinsic-size:auto 900px; }
