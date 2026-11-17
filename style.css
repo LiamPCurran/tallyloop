@@ -212,5 +212,3 @@ p { margin:0 0 1em; }
 .concept { border-top:1px solid #26214a; margin-top:48px; padding-top:22px; font-size:.86rem; color:#8c87b3; }
 @media (max-width:760px){ .f-grid { grid-template-columns:1fr 1fr; } }
 
-/* Below-the-fold sections: let the browser skip layout/paint until they're near the viewport. */
-.section, .stats, .cta, .site-footer { content-visibility:auto; contain-intrinsic-size:auto 900px; }
