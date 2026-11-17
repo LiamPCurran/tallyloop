@@ -82,7 +82,7 @@ NAV = [("features.html", "Features"), ("pricing.html", "Pricing"), ("about.html"
 def header(path):
     nav = "".join(f'<a href="{h}"' + (' aria-current="page"' if h == path else "") + f'>{l}</a>' for h, l in NAV)
     return f'''<header class="site-header"><div class="wrap">
-<a class="brand" href="index.html">{LOGO}<span>Tallyloop</span></a>
+<a class="brand" href="./">{LOGO}<span>Tallyloop</span></a>
 <nav class="nav" aria-label="Main">{nav}</nav>
 <div class="h-cta"><a class="login" href="contact.html">Log in</a><a class="btn" href="pricing.html">Start free</a></div>
 </div></header>'''
@@ -90,7 +90,7 @@ def header(path):
 
 FOOTER = f'''<footer class="site-footer"><div class="wrap">
 <div class="f-grid">
-<div><a class="brand light" href="index.html">{LOGO}<span>Tallyloop</span></a><p>Time tracking and invoicing for freelancers and small studios.</p></div>
+<div><a class="brand light" href="./">{LOGO}<span>Tallyloop</span></a><p>Time tracking and invoicing for freelancers and small studios.</p></div>
 <div><p class="f-h">Product</p><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="features.html#reminders">Payment reminders</a></li></ul></div>
 <div><p class="f-h">Company</p><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div><p class="f-h">Get started</p><p>Free for your first client. No card needed.</p><a class="btn btn-sm" href="pricing.html">Start free</a></div>
@@ -285,7 +285,7 @@ PAGES.append(("contact.html", "Contact Tallyloop Support",
     page_hero("Contact", "Talk to a human", "We reply within one business day, usually much sooner.")
     + f'''<section class="section pt0"><div class="wrap contact-grid">
 <form class="contact-form" id="contact" novalidate>
-<div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
+<div><label for="n">Name</label><input id="n" name="name" type="text" autocomplete="name" required></div>
 <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required></div>
 <div><label for="t">Topic</label><select id="t" name="topic"><option>Question before signing up</option><option>Help with my account</option><option>Billing</option><option>Something else</option></select></div>
 <div><label for="q">Message</label><textarea id="q" name="message" rows="5" required></textarea></div>
@@ -320,16 +320,16 @@ for path, title, desc, body, schemas in PAGES:
     canon = BASE + "/" + ("" if path == "index.html" else path)
     pre = ('<link rel="preload" as="image" href="assets/dashboard-1200.webp" imagesrcset="assets/dashboard-640.webp 640w, assets/dashboard-1200.webp 1200w" imagesizes="(max-width: 1100px) 100vw, 1060px" fetchpriority="high">\n'
            if path == "index.html" else "")
-    html = f'''<!doctype html>
+    html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
+<title>{title.replace('&', '&amp;')}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canon}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Tallyloop">
-<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
+<meta property="og:title" content="{title.replace('&', '&amp;')}"><meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canon}"><meta property="og:image" content="{BASE}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#6a48f0">
@@ -351,7 +351,7 @@ for path, title, desc, body, schemas in PAGES:
 '''
     (A / path).write_text(html, encoding="utf-8")
 
-(A / "404.html").write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Tallyloop</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/tallyloop/assets/style.css"></head><body><main class="section"><div class="wrap center"><h1>Page not found</h1><p><a class="btn" href="/tallyloop/">Back to Tallyloop</a></p></div></main></body></html>', encoding="utf-8")
+(A / "404.html").write_text('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Tallyloop</title><meta name="robots" content="noindex"><link rel="stylesheet" href="/tallyloop/assets/style.css"></head><body><main class="section"><div class="wrap center"><h1>Page not found</h1><p><a class="btn" href="/tallyloop/">Back to Tallyloop</a></p></div></main></body></html>', encoding="utf-8")
 (A / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(
     f"<url><loc>{BASE}/{'' if p == 'index.html' else p}</loc><lastmod>{TODAY}</lastmod></url>" for p, *_ in PAGES) + "</urlset>\n", encoding="utf-8")
 (A / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n", encoding="utf-8")
@@ -399,7 +399,7 @@ before_footer = FOOTER.replace('<span class="ver">This is the fixed "after" vers
 routes = {p.replace(".html", ""): degrade(body) for p, _, _, body, _ in PAGES}
 content = {"header": {p.replace(".html", ""): degrade(header(p)) for p, *_ in PAGES}, "footer": degrade(before_footer), "routes": routes}
 (B / "content.json").write_text(json.dumps(content, ensure_ascii=False), encoding="utf-8")
-(B / "index.html").write_text('''<!doctype html>
+(B / "index.html").write_text('''<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
